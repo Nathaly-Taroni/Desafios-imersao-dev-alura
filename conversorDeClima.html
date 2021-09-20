@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="conversorDeClima.css" media="screen">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+        Coversor de Temperatura</h1>
+        <p class="page-subtitle">
+        Descubra quantos graus celsius equivalem em fahrenheit!
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt="">
+        
+        <p>
+            <label class="temperatura">Temperatura em Graus Celsius</label>
+            <input type="number" name="celsius" id="celsius">
+        </p>
+
+            <button name="converter" id="converter" onclick="converter()">CONVERTER</button>
+        </p>
+        <div id="resultado"></div>
+    </div>
+      <a href="https://alura.com.br/" target="_blank">
+      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+      </a>
+    <script>
+        function converter () {
+            var grausCelsius = document.getElementById('celsius')
+            var resultado = document.getElementById('resultado')
+            var celsiusTemp = Number(grausCelsius.value)
+
+            var convertendo = (celsiusTemp * 1.8) + 32
+            resultado.innerHTML = `<p>A temperatura convertida para fahrenheit é <strong>${convertendo.toFixed(0)}</strong> ºF</p>`
+        }
+    </script>
+</body>
+</html>
